@@ -5,7 +5,7 @@ const dayjs = require('dayjs');
 const MusicServer = require('../server/music.js');
 
 const NeteaseMusic = async () => {
-    const browser = await puppeteer.launch({headless: true});
+    const browser = await puppeteer.launch({timeout: 300000, headless: true});
     // 定于数组存储数据
     let musicPlayList = [];
     const page = await browser.newPage();

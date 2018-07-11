@@ -5,7 +5,7 @@ const dayjs = require('dayjs');
 const MusicServer = require('../server/music.js');
 
 const QQMusic = async () => {
-    const browser = await puppeteer.launch({headless: true});
+    const browser = await puppeteer.launch({timeout: 300000, headless: true});
     // 定于数组存储数据
     let musicPlayList = [];
     const page = await browser.newPage();
@@ -40,10 +40,10 @@ const getOnePageData = async (page, pageNumber) => {
     await page.goto(url);
     await page.setViewport({ 
         width: 1300, 
-        height: 4227,
+        height: 5227,
     });
     // 等待两秒，加载图片
-    await page.waitFor(2000);
+    await page.waitFor(3000);
     // 获取歌单
     const result = await page.evaluate(() => {
         const elements = document.querySelectorAll('#playlist_box > li');
