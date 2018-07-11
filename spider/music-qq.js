@@ -50,7 +50,7 @@ const getOnePageData = async (page, pageNumber) => {
         let res = [];
         for (let ele of elements) {
             const _n = ele.querySelector('.js_playlist');
-            let img = 'https:' + ele.querySelector('.playlist__pic').getAttribute('src');
+            let image = 'https:' + ele.querySelector('.playlist__pic').getAttribute('src');
             let name = _n.getAttribute('title');
             let count = ele.querySelector('.playlist__other').innerText.split('：')[1].replace(/\s+/g, '');
             let author = ele.querySelector('.playlist__author').innerText.replace(/\s+/g, '');
@@ -58,7 +58,7 @@ const getOnePageData = async (page, pageNumber) => {
             const flag = (count.indexOf('万') > -1) && (parseInt(count.split('万')[0]) > 1000);
             if (flag) {
                 res.push({
-                    img,
+                    image,
                     name,
                     count,
                     author,

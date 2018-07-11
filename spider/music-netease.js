@@ -52,7 +52,7 @@ const getOnePageData = async (page, offset) => {
         const elements = document.querySelectorAll('#m-pl-container > li');
         let res = [];
         for (let ele of elements) {
-            let img = ele.querySelector('.j-flag').getAttribute('src');
+            let image = ele.querySelector('.j-flag').getAttribute('src');
             let name = ele.querySelector('.tit').innerText;
             let count = ele.querySelector('.nb').innerText;
             let author = ele.querySelector('.nm').innerText;
@@ -60,7 +60,7 @@ const getOnePageData = async (page, offset) => {
             const flag = (count.indexOf('万') > -1) && (parseInt(count.split('万')[0]) > 1000);
             if (flag) {
                 res.push({
-                    img,
+                    image,
                     name,
                     count,
                     author,
