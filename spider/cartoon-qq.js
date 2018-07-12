@@ -7,7 +7,7 @@ const CartoonServer = require('../server/movie.js');
 const url = 'http://v.qq.com/x/list/cartoon?sort=19&offset=';
 
 const cartoonSpider = async () => {
-    const browser = await puppeteer.launch({timeout: 300000, headless: true});
+    const browser = await puppeteer.launch({timeout: 300000, headless: true, args: ['--no-sandbox']});
     const page = await browser.newPage();
     let movieList = [];
     for (let i = 0; i < 67; i++) {
@@ -29,10 +29,10 @@ const getPageData = async (page, pageNumber) => {
     await page.goto(`${url}${pageNumber * 30}`);
     await page.setViewport({ 
         width: 1300, 
-        height: 4227,
+        height: 5227,
     });
     // 等待两秒，加载图片
-    await page.waitFor(2000);
+    await page.waitFor(3000);
     const result = await page.evaluate(() => {
         const listElements = document.querySelectorAll('.figures_list .list_item');
         let items = [];
