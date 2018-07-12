@@ -9,20 +9,20 @@ require('./mongo.js');
 
 // 创建爬取歌单定时任务
 const qqPlayList = () => {
-    TimeSchedule.scheduleJob('0 40 10 * * *', async () => {
+    TimeSchedule.scheduleJob('0 5 0 * * *', async () => {
         await QQMusicSpider();
     });
 }
 
 const neteasePlayList = () => {
-    TimeSchedule.scheduleJob('0 50 10 * * *', async () => {
+    TimeSchedule.scheduleJob('0 20 0 * * *', async () => {
         await NeteaseMusicSpider();
     });
 }
 
 // 创建爬取动漫任务
 const cartoonList = () => {
-    TimeSchedule.scheduleJob('0 10 11 * * *', async () => {
+    TimeSchedule.scheduleJob('0 50 0 * * *', async () => {
           await CartoonSpider();
     });
 }
