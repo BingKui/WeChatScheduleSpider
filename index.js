@@ -15,14 +15,14 @@ const qqPlayList = () => {
 }
 
 const neteasePlayList = () => {
-    TimeSchedule.scheduleJob('0 20 0 * * *', async () => {
+    TimeSchedule.scheduleJob('0 50 0 * * *', async () => {
         await NeteaseMusicSpider();
     });
 }
 
 // 创建爬取动漫任务
 const cartoonList = () => {
-    TimeSchedule.scheduleJob('0 50 0 * * *', async () => {
+    TimeSchedule.scheduleJob('0 50 1 * * *', async () => {
           await CartoonSpider();
     });
 }
