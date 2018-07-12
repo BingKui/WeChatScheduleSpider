@@ -9,7 +9,7 @@ const QQMusic = async () => {
     // 定于数组存储数据
     let musicPlayList = [];
     const page = await browser.newPage();
-    for (let i = 1; i < 220; i++) {
+    for (let i = 1; i < 120; i++) {
         const item = await getOnePageData(page, i);
         console.log(`获取到数据${item.length}条。`);
         musicPlayList = musicPlayList.concat(item);
