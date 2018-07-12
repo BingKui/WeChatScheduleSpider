@@ -43,7 +43,7 @@ const getOnePageData = async (page, pageNumber) => {
         height: 5227,
     });
     // 等待两秒，加载图片
-    await page.waitFor(3000);
+    await page.waitFor(2000);
     // 获取歌单
     const result = await page.evaluate(() => {
         const elements = document.querySelectorAll('#playlist_box > li');
